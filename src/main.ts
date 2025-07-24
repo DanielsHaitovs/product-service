@@ -32,6 +32,7 @@ async function bootstrap(): Promise<void> {
     .setDescription('E-commerce platform Product API documentation')
     .setVersion('1.0')
     .addTag('App', 'Health check and basic operations')
+    .addTag('Product', 'Basic Product operations')
     .addServer('/products')
     .addBearerAuth(
       {

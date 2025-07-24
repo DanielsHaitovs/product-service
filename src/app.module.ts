@@ -7,6 +7,7 @@ import { ThrottlerModule, ThrottlerModuleOptions } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './modules/app.controller';
+import { ProductModule } from './modules/product/product.module';
 
 @Module({
   controllers: [AppController],
@@ -44,15 +45,11 @@ import { AppController } from './modules/app.controller';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        host: configService.get('DATABASE_HOST') ?? 'localhost',
-        port: parseInt(
-          configService.get('PRODUCT_DATABASE_PORT') ?? '5433',
-          10,
-        ),
+        host: configService.get('PRODUCT_DATABASE_HOST') ?? 'localhost',
+        port: 5432,
         username: configService.get('DATABASE_USERNAME') ?? 'postgres',
         password: configService.get('DATABASE_PASSWORD') ?? 'postgres',
-        database:
-          configService.get('PRODUCT_PRODUCT_DATABASE_NAME') ?? 'postgres',
+        database: configService.get('PRODUCT_DATABASE_NAME') ?? 'postgres',
         synchronize: configService.get('DATABASE_SYNCHRONIZE') === 'true',
         logging: configService.get('DATABASE_LOGGING') === 'true',
         entities: [`${__dirname}/**/*.entity{.ts,.js}`],
@@ -61,6 +58,7 @@ import { AppController } from './modules/app.controller';
       }),
       inject: [ConfigService],
     }),
+    ProductModule,
   ],
 })
 export class AppModule implements NestModule {

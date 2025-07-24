@@ -18,7 +18,7 @@ export const createTestModule = async (): Promise<{
         imports: [ConfigModule],
         useFactory: (configService: ConfigService) => ({
           type: 'postgres',
-          host: configService.get('DATABASE_HOST') ?? 'localhost',
+          host: configService.get('PRODUCT_DATABASE_HOST') ?? 'localhost',
           port: parseInt(
             configService.get('PRODUCT_DATABASE_PORT') ?? '5433',
             10,
