@@ -35,6 +35,7 @@ export class ProductBaseDto {
   @IsString()
   @IsNotEmpty()
   name: string;
+
   @ApiProperty({
     description: 'The SKU (Stock Keeping Unit) of the product',
     type: String,
@@ -43,6 +44,7 @@ export class ProductBaseDto {
   @IsString()
   @IsNotEmpty()
   sku: string;
+
   @ApiProperty({
     description: 'The description of the product',
     type: String,
@@ -51,6 +53,7 @@ export class ProductBaseDto {
   @IsString()
   @IsNotEmpty()
   description: string;
+
   @ApiProperty({
     description: 'The meta title of the product',
     type: String,
@@ -59,6 +62,7 @@ export class ProductBaseDto {
   @IsString()
   @IsNotEmpty()
   metaTitle: string;
+
   @ApiProperty({
     description: 'The meta description of the product',
     type: String,
@@ -67,6 +71,7 @@ export class ProductBaseDto {
   @IsString()
   @IsNotEmpty()
   metaDescription: string;
+
   @ApiProperty({
     description: 'The meta description of the product',
     type: String,
@@ -93,6 +98,7 @@ export class ProductBaseDto {
   @IsNotEmpty()
   @IsBoolean()
   isActive: boolean;
+
   @ApiProperty({
     description: 'Indicates if the product is in stock',
     type: Boolean,
@@ -101,6 +107,7 @@ export class ProductBaseDto {
   @IsNotEmpty()
   @IsBoolean()
   inStock: boolean;
+
   @ApiProperty({
     description: 'Indicates if the product is visible',
     type: Boolean,
@@ -109,6 +116,7 @@ export class ProductBaseDto {
   @IsNotEmpty()
   @IsBoolean()
   isVisible: boolean;
+
   @ApiProperty({
     description: 'The type of the product',
     type: String,
@@ -119,6 +127,7 @@ export class ProductBaseDto {
   @IsNotEmpty()
   @IsEnum(ProductType)
   type: ProductType;
+
   @ApiProperty({
     description: 'The date from which the product is new',
     type: Date,
@@ -128,6 +137,7 @@ export class ProductBaseDto {
   @IsOptional()
   @IsDate()
   newFromDate: Date | null;
+
   @ApiProperty({
     description: 'The date until which the product is new',
     type: Date,

@@ -30,6 +30,7 @@ export class VariantProductBaseDto {
   @IsString()
   @IsNotEmpty()
   name: string;
+
   @ApiProperty({
     description: 'The SKU (Stock Keeping Unit) of the product',
     type: String,
@@ -38,6 +39,7 @@ export class VariantProductBaseDto {
   @IsString()
   @IsNotEmpty()
   sku: string;
+
   @ApiProperty({
     description: 'The description of the product',
     type: String,
@@ -46,6 +48,7 @@ export class VariantProductBaseDto {
   @IsString()
   @IsNotEmpty()
   description: string;
+
   @ApiProperty({
     description: 'The meta title of the product',
     type: String,
@@ -54,6 +57,7 @@ export class VariantProductBaseDto {
   @IsString()
   @IsNotEmpty()
   metaTitle: string;
+
   @ApiProperty({
     description: 'The meta description of the product',
     type: String,
@@ -80,6 +84,7 @@ export class VariantProductBaseDto {
   @IsNotEmpty()
   @IsBoolean()
   isActive: boolean;
+
   @ApiProperty({
     description: 'Indicates if the product is in stock',
     type: Boolean,

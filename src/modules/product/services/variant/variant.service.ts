@@ -3,11 +3,11 @@ import {
   PRODUCT_QUERY_ALIAS,
   VARIANT_PRODUCT_QUERY_ALIAS,
 } from '@/lib/const/product.const';
-import { CreateProductDto } from '@/product/dto/product.dto';
 import {
   CreateVariantProductDto,
   VariantProductListRepsonseDto,
-} from '@/product/dto/variant/product.dto';
+} from '@/modules/product/dto/variant/variant.dto';
+import { CreateProductDto } from '@/product/dto/product.dto';
 import { Product } from '@/product/entities/product.entity';
 import { Variant } from '@/product/entities/variant.entity';
 import { ProductSearchCriteria } from '@/product/type/product.type';
